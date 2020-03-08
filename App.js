@@ -1,5 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { AppLoading } from 'expo';
+import * as Font from 'expo-font';
 // import Training from './components/training';
-import Todos from './components/Todos';
+// import Todos from './components/Todos';
 
-export default () => <Todos />
+import HomeStack from './routes/homeStack';
+
+const getFont = () => Font.loadAsync({
+  'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
+  'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf'),
+});
+
+
+export default () => {
+const [loaded, setLoaded] = useState(false);
+
+
+return (loaded
+  ? <HomeStack />
+  : <AppLoading
+      startAsync={getFont}
+      onFinish={() => setLoaded(true)}
+    />)
+};
