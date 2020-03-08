@@ -1,12 +1,14 @@
+import React from 'react';
 import { createStackNavigator } from 'react-navigation-stack';
 import About from '../screens/About';
+import CustomHeader from '../shared/header';
 
 const routes = {
     About: {
         screen: About,
-        navigationOptions: {
-            title: 'About',
-        }
+        navigationOptions: ({ navigation }) => ({
+            headerTitle: () => <CustomHeader title="About" navigation={navigation} />,
+        })
     },
 }
 
