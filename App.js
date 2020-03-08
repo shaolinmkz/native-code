@@ -4,7 +4,7 @@ import * as Font from 'expo-font';
 // import Training from './components/training';
 // import Todos from './components/Todos';
 
-import HomeStack from './routes/homeStack';
+import HomeStack from './routes/drawer';
 
 const getFont = () => Font.loadAsync({
   'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
